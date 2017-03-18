@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05511097-D2E3-4AA7-9920-E3F00EC59728}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FEA3D</RootNamespace>
+    <AssemblyName>fea3d</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="elem\ElemEBbeam2d.cs" />
+    <Compile Include="elem\Element.cs" />
+    <Compile Include="elem\ElementLin2D.cs" />
+    <Compile Include="elem\ElementQuad2D.cs" />
+    <Compile Include="elem\ElementQuad3D.cs" />
+    <Compile Include="elem\ElemLin3D.cs" />
+    <Compile Include="elem\ElemTruss2d2.cs" />
+    <Compile Include="elem\ElemTruss3d2.cs" />
+    <Compile Include="elem\NonExistentElement.cs" />
+    <Compile Include="elem\ShapeLin2D.cs" />
+    <Compile Include="elem\ShapeLin3D.cs" />
+    <Compile Include="elem\ShapeQuad2D.cs" />
+    <Compile Include="elem\ShapeQuad3D.cs" />
+    <Compile Include="elem\StressContainer.cs" />
+    <Compile Include="fea3d.cs" />
+    <Compile Include="fea\CSFEM.cs" />
+    <Compile Include="fea\CSMGEN.cs" />
+    <Compile Include="fea\fe.cs" />
+    <Compile Include="gener\connect.cs" />
+    <Compile Include="gener\copy.cs" />
+    <Compile Include="gener\genquad4.cs" />
+    <Compile Include="gener\genquad8.cs" />
+    <Compile Include="gener\line.cs" />
+    <Compile Include="gener\readmesh.cs" />
+    <Compile Include="gener\rect4.cs" />
+    <Compile Include="gener\rect8.cs" />
+    <Compile Include="gener\ring4.cs" />
+    <Compile Include="gener\ring8.cs" />
+    <Compile Include="gener\sweep20.cs" />
+    <Compile Include="gener\sweep8.cs" />
+    <Compile Include="gener\transform.cs" />
+    <Compile Include="gener\truss2d2.cs" />
+    <Compile Include="gener\writemesh.cs" />
+    <Compile Include="material\ElasticMaterial.cs" />
+    <Compile Include="material\ElasticPlasticMaterial.cs" />
+    <Compile Include="material\Material.cs" />
+    <Compile Include="model\Dof.cs" />
+    <Compile Include="model\ElemFaceLoad.cs" />
+    <Compile Include="model\FeLoad.cs" />
+    <Compile Include="model\FeLoadData.cs" />
+    <Compile Include="model\FeModel.cs" />
+    <Compile Include="model\FeModelData.cs" />
+    <Compile Include="model\FeStress.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="solver\Solver.cs" />
+    <Compile Include="solver\SolverLDU.cs" />
+    <Compile Include="solver\SolverPCG.cs" />
+    <Compile Include="util\FePrintWriter.cs" />
+    <Compile Include="util\FeScanner.cs" />
+    <Compile Include="util\GaussRule.cs" />
+    <Compile Include="util\Scanner.cs" />
+    <Compile Include="util\UTIL.cs" />
+    <Compile Include="visual\CsfeaToVtk.cs" />
+    <Compile Include="visual\ResultAtNodes.cs" />
+    <Compile Include="visual\SurfaceGeometry.cs" />
+    <Compile Include="visual\VisData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
