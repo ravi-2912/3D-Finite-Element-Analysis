@@ -14,7 +14,7 @@ Microsoft Visual Studio
 .NET Framework 4.0
 ```
 
-** TO BE UPDATED **
+* ** TO BE UPDATED **
 
 
 ### Installing
